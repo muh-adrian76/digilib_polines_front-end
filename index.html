@@ -1,0 +1,156 @@
+<!-- <?php
+// session_start();
+// error_reporting(0);
+// include("class.php");
+// $digi = new digilib;
+// $koneksi = $digi->koneksi();
+
+// input data login admin
+//  $user="admin";
+//  $pass="admin";
+//  $pass_hash=password_hash($pass, PASSWORD_DEFAULT); //hashing password
+//  mysqli_query($koneksi,"INSERT INTO login VALUES ('$user','$pass_hash',NOW(),NOW())");
+
+// if (isset($_POST['tombol'])) {
+//   $user = $_POST['user'];
+//   $pass = $_POST['pswd'];
+
+//query data di tabel login username tsb
+// $cari_query = mysqli_query($koneksi, "SELECT username,password FROM login WHERE username='$user'");
+//ambil data password hash
+// $ambil_data = mysqli_fetch_row($cari_query);
+// $pass_db = $ambil_data[1];
+
+//cek data username tsb ada atau tdk di tabel login 
+// $cek_data = mysqli_num_rows($cari_query);
+// $pass_hash = password_verify($pass, $pass_db);
+
+// if (!empty($cek_data) && !empty($pass_hash)) {
+//   //jika login berhasil maka akan membuat session baru username dan password
+//   session_start();
+//   $_SESSION['user'] = $user;
+//   $_SESSION['pass'] = $pass_db;
+//   mysqli_query($koneksi, "UPDATE login SET last_login=NOW() WHERE username='$user'");
+
+//   echo "<script>window.location.replace('html/index.php')</script>";
+// } else {
+//kalo gagal login diberi alert
+//     echo "<div class=\"alert alert-dark center login\" 
+//               role=\"alert\"
+//               style=\"
+//                 max-width: 50%;
+//                 z-index: 999999999999;
+//                 margin: auto;
+//                 position: absolute;
+//                 top: 10px;
+//                 left: 50%;
+//                 transform: translateX(-50%);
+//                 display: flex;
+//                 align-items:center;
+//                 gap: 10px;
+//               \">
+//               <i class='bx bx-error'></i> Data Login Anda Salah!
+//             </div>";
+//   }
+// }
+// 
+?> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIGILIB TELKOM | Login</title>
+  <link rel="icon" type="image/x-icon" href="./img/logo-notext.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/login.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="./js/jquery-3.6.4.js"></script>
+  <script>
+    $(function () {
+      $("i.bx").click(function () {
+        $(this).toggleClass('bx-hide bx-show');
+        if ($("input#password").attr('type') === 'text') {
+          $("input#password").attr('type', 'password');
+        } else if ($("input#password").attr('type') === 'password') {
+          $("input#password").attr('type', 'text');
+        };
+      });
+      $(".alert").fadeOut(5000);
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+      <div class="authentication-inner">
+        <!-- Register -->
+        <div class="card">
+          <div class="card-body">
+            <!-- Logo -->
+            <div class="app-brand justify-content-center">
+              <a href="https://main.polines.ac.id/id/" target="blank" class="app-brand-link">
+                <span class="app-brand-logo polines"><img src="./img/polines.png" alt=""></span>
+                <span class="app-brand-logo"><img src="./img/logo-text.png" alt=""></span>
+                <span class="app-brand-logo polines"><img src="./img/hme.png" alt=""></span>
+              </a>
+            </div>
+            <!-- /Logo -->
+            <div class="d-flex flex-column align-items-center">
+              <h4 class="mb-2">Selamat Datang.. &#128075;&#127995;</h4>
+              <p class="mb-4">Tolong masuk ke akun anda terlebih dahulu !</p>
+            </div>
+            <form id="formAuthentication" class="mb-3" action="" method="POST">
+              <div class="mb-3">
+                <label for="email" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="user" placeholder="Masukkan NIP / NIK"
+                  autofocus required />
+              </div>
+              <div class="mb-3 form-password-toggle">
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="password">Password</label>
+                  <!-- <a href="auth-forgot-password-basic.html">
+                      <small>Forgot Password?</small>
+                    </a> -->
+                </div>
+                <div class="input-group input-group-merge">
+                  <input type="password" id="password" class="form-control" name="pswd"
+                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" autofocus
+                    required />
+                  <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                </div>
+              </div>
+              <!-- <div class="mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-me" />
+                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                  </div>
+                </div> -->
+              <div class="mb-3">
+                <button class="btn btn-primary d-grid w-100" type="submit" name="tombol" value="login">Masuk</button>
+              </div>
+            </form>
+
+            <p class="text-center">
+              <span>Beberapa laporan membolehkan akses tamu</span>
+              <a href="main/utama.html">
+                <span>Masuk Sebagai Tamu</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

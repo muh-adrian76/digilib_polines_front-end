@@ -1,0 +1,29 @@
+!dosen dapat melakukan comment, report dan download
+*comment dosen otomatis di pin (gak terlalu penting)
+
+guest/tamu(selain mhs telkom dan dosen telkom) dapat melakukan login as guest
+guest hanya dapat melihat preview dan tidak bisa download
+
+mahasiswa dapat melakukan report kepada admin jika terdapat kesalahan pada file yang diupload
+!mahasiswa dapat melakukan comment
+mahasiswa dapat melakukan upload dengan persetujuan admin, dan akan menerima notifikasi lewat email jika file sudah diupload
+
+hanya admin yang bisa edit(validasi upload, delete file)
+
+makalah psd (penerapan psd dalam lingkup iot dan wsn)
+format (bhs baku EYD)
+1. latar belakang
+2. metode peneltian
+3. hasil dan pembahasan
+4. kesimpulan
+minimal 5 sumber jurnal
+
+https://sinta.kemdikbud.go.id/journals/profile/4252
+https://www.mdpi.com/
+https://www.springer.com/gp
+https://ieeeaccess.ieee.org/
+https://journals.sagepub.com/
+
+34.127.30.79
+34.82.165.185
+
